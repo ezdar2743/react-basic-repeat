@@ -3,10 +3,12 @@
   list-style: none;
 }
 .aniTitle {
+  margin-right: 0.5em;
 }
 .aniYear {
   color: red;
   flex-grow: 0.8;
+  font-size: 0.6em;
 }
 
 .underLine {

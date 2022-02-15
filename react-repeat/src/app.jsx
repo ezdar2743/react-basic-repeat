@@ -1,48 +1,26 @@
 import React, { useState } from 'react';
 import './app.css';
-import Anilist from './components/anilist';
+import Anilist from './components/list/anilist';
+import Form from './components/form/form';
 function App() {
-  const[aniList, setAniList] = useState([{
-    title: 'ss',
-    year: 200,
-}])
-  const [aniTitle,setAniTitle] = useState('')
-  const [aniYear,setAniYear] = useState('')
+  const[aniList, setAniList] = useState([])
   
   const renderAniList = aniList.map((list)=>{
     return(
-      <Anilist list={list}/>
+      <Anilist 
+      list={list}
+      key = {list.title}
+      />
     )
   })
-  const onSubmit= (e)=>{
-    e.preventDefault();
-    setAniList([...aniList,{
-      title: aniTitle,
-      year : aniYear
-    }])
-    setAniTitle('');
-    setAniYear('');
-
-
+  const addList= (list)=>{
+    setAniList([...aniList,list])
   }
 
   return (
     <>
     <h1>AniList</h1>
-    <form onSubmit={onSubmit}>
-      <input 
-      type="text"
-      placeholder='title'
-      onChange={e=>setAniTitle(e.target.value)}
-      value={aniTitle}
-      
-      />
-      <input type="text"
-      placeholder='year'
-      onChange={e=>setAniYear(e.target.value)}
-      value={aniYear}/>
-      <input type="submit" value='입력'/>
-    </form>
+    <Form addList={addList}/>
     {renderAniList}
 
     </>
