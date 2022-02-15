@@ -9,11 +9,15 @@ const Form = ({addList}) => {
   }
   const onSubmit= (e)=>{
     e.preventDefault();
-    addList({
-        title:aniTitle,
-        year:aniYear
-    })
-    inputReset();
+    if(aniTitle.length>0&&aniYear.length){
+        addList({
+            title:aniTitle,
+            year:aniYear
+        })
+        inputReset();
+    }
+    else alert('이름과 년도를 입력해주세요')
+    
 
 
   }

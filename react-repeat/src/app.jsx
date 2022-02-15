@@ -5,14 +5,14 @@ import Form from './components/form/form';
 function App() {
   const[aniList, setAniList] = useState([])
   
-  const renderAniList = aniList.map((list)=>{
+  const renderAniList = aniList.length? aniList.map((list)=>{
     return(
       <Anilist 
       list={list}
-      key = {list.title}
+      key = {Date.now()}
       />
     )
-  })
+  }) :'추가된 애니메이션이 없습니다'
   const addList= (list)=>{
     setAniList([...aniList,list])
   }
