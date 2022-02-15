@@ -1,0 +1,15 @@
+.list {
+  display: flex;
+  list-style: none;
+}
+.aniTitle {
+}
+.aniYear {
+  color: red;
+  flex-grow: 0.8;
+}
+
+.underLine {
+  border: 1px solid grey;
+  width: 90%;
+}
