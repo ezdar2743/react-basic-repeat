@@ -13,7 +13,8 @@ const Form = ({addList}) => {
     if(aniTitle.length>0&&aniYear.length){
         addList({
             title:aniTitle,
-            year:aniYear
+            year:aniYear,
+            id: Date.now()
         })
         inputReset();
     }
