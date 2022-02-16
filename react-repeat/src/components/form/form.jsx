@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import Input from './input';
 
 const Form = ({addList}) => {
   const [aniTitle,setAniTitle] = useState('')
@@ -24,17 +25,16 @@ const Form = ({addList}) => {
 
     return(
     <form onSubmit={onSubmit}>
-      <input 
-      type="text"
-      placeholder='title'
-      onChange={e=>setAniTitle(e.target.value)}
-      value={aniTitle}
-      
-      />
-      <input type="text"
+     <Input type='text'
+     placeholder ='title'
+     onChange={e=>setAniTitle(e.target.value)}
+     value={aniTitle}/>
+
+      <Input type="text"
       placeholder='year'
       onChange={e=>setAniYear(e.target.value)}
       value={aniYear}/>
+      
       <input type="submit" value='입력'/>
     </form>
     )
