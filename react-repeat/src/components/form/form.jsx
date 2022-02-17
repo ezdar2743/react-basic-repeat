@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import Input from './input';
 
-const Form = ({addList}) => {
+const Form = ({addList, renderAniList}) => {
   const [aniTitle,setAniTitle] = useState('')
   const [aniYear,setAniYear] = useState('')
   const inputReset=()=>{
@@ -25,19 +25,25 @@ const Form = ({addList}) => {
   }
 
     return(
+    <>
+    <h1>AniList</h1>
     <form onSubmit={onSubmit}>
-     <Input type='text'
+     <Input 
+     type='text'
      placeholder ='title'
      onChange={e=>setAniTitle(e.target.value)}
      value={aniTitle}/>
 
-      <Input type="text"
+      <Input 
+      type="text"
       placeholder='year'
       onChange={e=>setAniYear(e.target.value)}
       value={aniYear}/>
       
       <input type="submit" value='입력'/>
     </form>
+    {renderAniList}
+    </>
     )
 };
 

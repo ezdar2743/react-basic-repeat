@@ -2,8 +2,15 @@ import React, { useState } from 'react';
 import './app.css';
 import Anilist from './components/list/anilist';
 import Form from './components/form/form';
+import Navbar from './components/navbar/navbar';
+import {
+      BrowserRouter,
+      Routes,
+      Route
+} from "react-router-dom"
 function App() {
   const[aniList, setAniList] = useState([])
+  
   const handleDelete= (id)=>{
     setAniList(aniList.filter((list)=>{
       return list.id!==id;
@@ -23,12 +30,18 @@ function App() {
   }
 
   return (
-    <>
-    <h1>AniList</h1>
-    <Form addList={addList}/>
-    {renderAniList}
+    <BrowserRouter>
+    <Navbar/>
+    <Routes>
+      <Route path= "/" element="home"></Route>
+      <Route path= "/Animation" element={<Form addList={addList} renderAniList={renderAniList}/>}></Route>
+      <Route path=  "Users" element={<h1>users</h1>}></Route>
+    </Routes>
+    
+    
+    
 
-    </>
+    </BrowserRouter>
   );
 }
 
