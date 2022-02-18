@@ -9,6 +9,7 @@ import {
       Route
 } from "react-router-dom"
 import Users from './pages/users';
+import axios from 'axios';
 
 function App() {
   const[aniList, setAniList] = useState([])
