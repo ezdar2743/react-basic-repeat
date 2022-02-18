@@ -8,6 +8,8 @@ import {
       Routes,
       Route
 } from "react-router-dom"
+import Users from './pages/users';
+
 function App() {
   const[aniList, setAniList] = useState([])
   
@@ -35,7 +37,7 @@ function App() {
     <Routes>
       <Route path= "/" element="home"></Route>
       <Route path= "/Animation" element={<Form addList={addList} renderAniList={renderAniList}/>}></Route>
-      <Route path=  "Users" element={<h1>users</h1>}></Route>
+      <Route path=  "Users" element={<Users/>}></Route>
     </Routes>
     
     
