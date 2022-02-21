@@ -8,6 +8,8 @@ import {
 } from "react-router-dom"
 import Users from './pages/users';
 import Animation from './pages/animation'
+import Home from './pages/home';
+import routeList from './routeList';
 
 
 function App() {
@@ -16,9 +18,17 @@ function App() {
     <BrowserRouter>
     <Navbar/>
     <Routes>
-      <Route path= "/" element="home"></Route>
-      <Route path= "/Animation" element={<Animation></Animation>}></Route>
-      <Route path=  "Users" element={<Users/>}></Route>
+      {routeList.map(route=>{
+        return (
+          <Route 
+          path= {route.path} 
+          element={<route.component/>}
+          exact
+          key={route.path}
+          ></Route>
+        )
+      })}
+
     </Routes>
     
     

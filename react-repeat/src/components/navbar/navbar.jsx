@@ -24,14 +24,14 @@ const navbar = () => {
         <li className="nav-item">
           <NavLink 
           className="nav-link"
-          to="Animation"
+          to="/Animation"
           
           >Animation</NavLink>
         </li>
         <li className="nav-item">
           <NavLink
           className="nav-link"
-          to="Users"
+          to="/Users"
           
           >Users</NavLink>
         </li>
